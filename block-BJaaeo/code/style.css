@@ -1,0 +1,38 @@
+.numbers td{
+    border: 1px solid rgba(128, 128, 128, 0.582);
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.operation{
+    /* border: 1px solid blue; */
+    color: white;
+    background-color: rgb(113,1,51);
+    border-radius: 1rem;
+}
+.equal{
+    border-radius: 1rem;
+    font-weight: 900;
+    background-color: rgb(1,128,128);
+}
+
+.numbers .input{
+    height: 40px;
+    margin-bottom: 2rems;
+    border-radius: 1rem;
+    text-align: right;
+}
+table{
+    margin: auto;
+    margin-top: 0.5rem;
+}
+.clear{
+    background: brown;
+}
+
