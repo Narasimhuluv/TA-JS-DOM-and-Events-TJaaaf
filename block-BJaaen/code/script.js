@@ -1,11 +1,10 @@
-let userRoot = document.querySelector('.user-icons')
-let computerRoot = document.querySelector('.computer-icons')
-let output = document.querySelector('.output')
-let reset = document.querySelector('.reset')
-let result_score = document.querySelector('.result-score') 
-let computer_result_score = document.querySelector('.computer-result-score')
+let userRoot = document.querySelector(".user_icons");
+let computerRoot = document.querySelector(".computer_icons");
+let result  = document.querySelector('.result')
+let reset = document.querySelector('button')
 
-let dataSet = [
+
+let dataOfGame = [
     {
         name : "rock",
         beats : "scissors"
@@ -17,94 +16,74 @@ let dataSet = [
     {
         name : "paper",
         beats : "rock"
-    }
-]
+    },
+];
+let count = 0
 
+// <!-- <li class="selected"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></li>
 let userSelected = {}, computerSelected = {};
-
-
-
-let count = 0;
-let computer_count = 0;
-
-
-function getWinner(user, computer){
+function getWinner(user,computer){
+    // console.log(user,computer)
     if(user.name === computer.name){
-        output.innerText = "It's a Tie"
+        result.innerHTML = "📎Tie📎"
        
-    }else if (user.beats === computer.name){
-        output.innerText = 'You Win'
-        count += 1;
-        result_score.innerText = count;
-    }else{
-        output.innerText = 'Computer Win'
-        computer_count += 1;
-        computer_result_score.innerText = computer_count;
     }
-    // getCount();
-}
-// function getCount(count=0){
-//     if()
-// }
+    else if(user.beats === computer.name){
+        result.innerHTML = "User wins"
 
-function getRandomNumber(max = 3){
-    return Math.floor(Math.random() * max)
+    }else{
+        result.innerHTML = "Computer Wins"
+    }
+}
+function getRandomNumber(num = 3){
+    return Math.floor(Math.random() * num)
 }
 
 function createUserLayout(){
     userRoot.innerHTML = "";
-    dataSet.forEach((icon) => {
-        let li = document.createElement('li');
-        let i = document.createElement('i');
-    
-        i.className = `fa fa-hand-${icon.name}-o`
-        li.append(i);
+     dataOfGame.forEach((icon) => {
+         let li = document.createElement('li')
+         let i = document.createElement('i')
+         i.className = `fa fa-hand-${icon.name}-o`;
+        
 
-        if(userSelected.name === icon.name){
-            li.classList.add('selected')
-        }
+         if(userSelected.name === icon.name){
+             li.classList.add("selected")
+         }
 
-        li.addEventListener('click', () => {
-            userSelected = icon;
-
-            computerSelected = dataSet[getRandomNumber()];
-            // console.log(userSelected, computerSelected)
-
-            getWinner(userSelected, computerSelected)
-            createComputerLayout();
-            createUserLayout();
-        })
-
-        userRoot.append(li)
-    })
+         li.addEventListener('click', () => {
+             userSelected = icon
+             computerSelected = dataOfGame[getRandomNumber()];
+             getWinner(userSelected,computerSelected)
+             createComputerLayout();
+             createUserLayout();
+         }); 
+         li.append(i);
+         userRoot.append(li);
+     })
 }
-
 createUserLayout();
-
 
 function createComputerLayout(){
     computerRoot.innerHTML = "";
-    dataSet.forEach((icon) => {
-        let li = document.createElement('li');
-        let i = document.createElement('i');
-    
+    dataOfGame.forEach((icon) => {
+        let li = document.createElement('li')
+        let i = document.createElement('i')
+        i.className = `fa fa-hand-${icon.name}-o`;
+        
         if(computerSelected.name === icon.name){
-            li.classList.add('selected')
+            li.classList.add("selected")
         }
-
-        i.className = `fa fa-hand-${icon.name}-o`
         li.append(i);
-
-        computerRoot.append(li)
+        computerRoot.append(li);
     })
 }
-
 createComputerLayout();
 
-reset.addEventListener('click', () => {
+
+reset.addEventListener('click', ()=> {
     userSelected = {};
     computerSelected = {};
     createUserLayout();
     createComputerLayout();
-    output = ""
 })

@@ -4,58 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper and Scissors</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://kit.fontawesome.com/914a3e3774.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/17bbe460ec.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <main class="container">
+      <h1 class="heading">Rock Paper and Scissor</h1>
+      <button>🎱 Reset</button>
 
-    <section class="game-section">
-      <div class="container">
-        <article class="top">
-          <h1>Rock Paper Scissors</h1>
-        </article>
-
-        <article class="mid">
-          <div class="flex">
-            <h2>You - <strong class="result-score" data-your-score>0</strong></h2>
-          <small class="name"></small>
-          </div>
-          <!-- <i class="fa fa-hand-rock-o rock selection" data-selection="rock" aria-hidden="true"></i>
-          <i class="fa fa-hand-paper-o paper selection"  data-selection="paper" aria-hidden="true"></i>
-          <i class="fa fa-hand-scissors-o scissor selection"  data-selection="scissor" aria-hidden="true"></i> -->
-          <ul class="user-icons flex">
-
+      <div class="game_box">
+        <div class="user">
+        
+          <span>You : SELECTED ONE</span>
+          <ul class="user_icons flex justfy_between">
+            <!-- <li class="selected"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></li>
+            <li><i class="fa fa-hand-paper-o" aria-hidden="true"></i></li>
+            <li><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></li> -->
           </ul>
-          <div class="selected"></div>
-
-        </article>
-
-        <article class="bottom">
-         <div class="flex">
-          <h2>Computer -  <strong class="computer-result-score" data-computer-score>0</strong></h2>
-          <small class="name"></small>
-         </div>
-          <!-- <i class="fa fa-hand-rock-o com_rock" aria-hidden="true"></i>
-          <i class="fa fa-hand-paper-o com_paper" aria-hidden="true"></i>
-          <i class="fa fa-hand-scissors-o com_scissor" aria-hidden="true"></i> -->
-          <ul class="computer-icons flex">
-
+  
+        </div>
+  
+  
+        <div class="computer">
+  
+          <span>COMPUTER : </span>
+          <ul class="computer_icons flex justfy_between">
+            <!-- <li class="selected"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></li>
+            <li><i class="fa fa-hand-paper-o" aria-hidden="true"></i></li>
+            <li><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></li> -->
           </ul>
-        </article>
-
-        <div class="reset_div">
-          <i class="fas fa-sync-alt reset"></i>
+  
         </div>
-
-        <div class="output-div center" data-final-column>
-          <h3 class="output "></h3>
-        </div>
+  
+        <div class="result">You Won</div>
       </div>
-    </section>
-
-
-    <script src="./script.js"></script>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
