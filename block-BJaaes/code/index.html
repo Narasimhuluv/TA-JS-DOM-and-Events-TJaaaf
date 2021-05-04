@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Validation 👇</title>
+  </head>
+  <body>
+   <form action=""> 
+     <div class="form_control">
+       <label for="text">UserName</label>
+       <input type="text" name="userName" placeholder="Enter userName">
+       <small>Name Can't be empty</small>
+     </div>
+
+     <div class="form_control error">
+       <label for="text">Name</label>
+       <input type="text" name="name" placeholder="Enter Name">
+       <small>Name can't be empty</small>
+     </div>
+
+
+     <div class="form_control success">
+       <label for="text">Email</label>
+       <input type="email" name="email" id="email" placeholder="zyx@gmail.com">
+       <small>can't be empty</small>
+     </div>
+
+     <input type="submit">
+   </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
