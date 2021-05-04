@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Validation 👇</title>
+  </head>
+  <body>
+   <form action="php" method="POST"> 
+     <div class="form_control">
+       <label for="username">UserName</label>
+       <input type="text" name="userName" placeholder="Enter userName">
+       <small></small>
+     </div>
+
+     <div class="form_control error">
+       <label for="name">Name</label>
+       <input type="text" name="name" placeholder="Enter Name">
+       <small></small>
+     </div>
+
+    
+
+
+     <div class="form_control success">
+       <label for="text">Email</label>
+       <input type="email" name="email" id="email" placeholder="zyx@gmail.com">
+       <small></small>
+     </div>
+
+
+    
+    <div class="form_control ">
+      <label for="phone">Phone</label>
+      <input type="number" name="phone" placeholder="Enter Name">
+      <small></small>
+    </div>
+
+
+    <div class="form_control error">
+      <label for="name">password</label>
+      <input type="password" name="password" placeholder="Enter Name">
+      <small></small>
+    </div>
+
+     <button type="submit">Submit</button>
+   </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
