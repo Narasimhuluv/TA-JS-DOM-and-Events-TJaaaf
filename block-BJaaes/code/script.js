@@ -1,27 +1,45 @@
-let form = document.querySelector('form');
-let usernameError = "";
-function doesContainNumber(string){
-    return string.split("").some(e => Number(e))
-}
-function handleSubmit(){
-    event.preventDefault();
-    console.log(event.target);
+let form = document.querySelector('form')
+let userInfo = {};
+let errorMessage = {}
 
-    let usernameElem = event.target.elements.userName;
-    if(usernameElem.value === ""){
-        usernameError = "cant be empty";
-        parentElm.classList.add("error")
-    }else if(usernameElem.value.length < 5){
-        usernameError = "Cant be less than five characters"
-        parentElm.classList.add("error")
-    }else if(doesContainNumber(usernameElem.value)){
-        usernameError = "Must contain at least one number"
-        parentElm.classList.add("error")
-    }else{
-        usernameError = "";
-        parentElm.classList.add("sucess")
-        parentElm.classList.add("error")
-    }
-usernameElem.nextElementSibling.innerText = usernameElem;
+function displayError(name){
+    let elm = form.elements[name];
+    elm.nextElementSiblin.innerText = errorMessage[name]
+    elm.parentElement.classList.add("error")
 }
-form.addEventListener('submit',handleSubmit)
+
+function displaySuccess(name){
+    let elm = form.elements[name];
+    elm.nextElementSiblin.innerText = "";
+    errorMessage[name] = ""
+    elm.parentElement.classList.remove("error")
+    elm.parentElement.classList.add("success")
+}
+
+function handleInputs(event){
+    event.preventDefault();
+    let elements = event.target.elements;
+    const username = elements.userName.value;
+    const name = elements.name.value;
+    const email = elements.email.value;
+    const phone = elements.phone.value;
+    const password = elements.password.value;
+    // const passwordCheck = elements['password-check'].value;
+    // console.log({username,name,email,phone,password})
+
+
+//     Username can't be less than 4 characters
+    if(username.length <= 4){
+        errorMessage.username = "username can't be less than 4 characters"
+        displayError("username")
+    }else{
+        displaySuccess("username")
+    }
+//     Name can't be numbers
+    // Email must contain the symbol @
+    // Email must be at least 6 characters
+    // Phone numbers can only be a number
+    // Length of phone number can't be less than 7
+    // Password and confirm password must be same.
+}
+form.addEventListener('submit',handleInputs)

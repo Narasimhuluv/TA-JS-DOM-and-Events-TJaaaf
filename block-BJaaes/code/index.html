@@ -7,27 +7,44 @@
     <title>Form Validation 👇</title>
   </head>
   <body>
-   <form action=""> 
+   <form action="php" method="POST"> 
      <div class="form_control">
-       <label for="text">UserName</label>
+       <label for="username">UserName</label>
        <input type="text" name="userName" placeholder="Enter userName">
-       <small>Name Can't be empty</small>
+       <small></small>
      </div>
 
      <div class="form_control error">
-       <label for="text">Name</label>
+       <label for="name">Name</label>
        <input type="text" name="name" placeholder="Enter Name">
-       <small>Name can't be empty</small>
+       <small></small>
      </div>
+
+    
 
 
      <div class="form_control success">
        <label for="text">Email</label>
        <input type="email" name="email" id="email" placeholder="zyx@gmail.com">
-       <small>can't be empty</small>
+       <small></small>
      </div>
 
-     <input type="submit">
+
+    
+    <div class="form_control ">
+      <label for="phone">Phone</label>
+      <input type="number" name="phone" placeholder="Enter Name">
+      <small></small>
+    </div>
+
+
+    <div class="form_control error">
+      <label for="name">password</label>
+      <input type="password" name="password" placeholder="Enter Name">
+      <small></small>
+    </div>
+
+     <button type="submit">Submit</button>
    </form>
     <script src="./script.js"></script>
   </body>

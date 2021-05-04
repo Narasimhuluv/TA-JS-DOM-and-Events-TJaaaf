@@ -35,3 +35,26 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* ----------------- */
+
+form{
+  width: 25%;
+  margin: 10rem auto;
+  border: 1px solid grey;
+  line-height: 1.8;
+  padding: 2rem;
+}
+input{
+  width: 95%;
+  height: 2.5rem;
+  padding-left: 1rem;
+}
+.form_control{
+  margin-top: 2rem;
+}
+button{
+  margin-top: 1.5rem;
+  /* padding: 0.6rem 1.5rem; */
+  width: 95%;
+  padding: 0.6rem 0;
+}
