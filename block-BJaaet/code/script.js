@@ -25,9 +25,8 @@ function movieName(elements){
     i.classList.add('image')
     i.src =  "https://www.flaticon.com/svg/vstatic/svg/1828/1828666.svg?token=exp=1620109487~hmac=c68d8d6c4f93fef6a6ae0f91d3d012dd"
     i.addEventListener('click', ()=> {
-        check.remove();
-        li.remove();
-        i.remove();
+        div.remove();
+        
     })
     ul.append(div)
     div.append(check,li, i);
