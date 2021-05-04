@@ -79,6 +79,7 @@ input{
     align-items: center;
     justify-content: flex-start;
     margin-top: 1rem;
+    border: 1px dotted white;
 }
 .image{
     width: 1em;
